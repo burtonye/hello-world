@@ -9,10 +9,11 @@ A fun, interactive 2-player game where players take turns drawing boxes around a
 ### How to Play
 
 1. Open `fruit-box-game.html` in your web browser
-2. Players take turns selecting apples by clicking and dragging to create a rectangular selection
-3. The sum of all apples in your box must equal exactly 10
-4. Successfully complete a box to score 1 point
-5. First player to reach 10 points wins!
+2. The game features a 17x10 grid of apples, each numbered 1-9
+3. Players take turns selecting apples by clicking and dragging to create a rectangular selection
+4. The sum of all apples in your box must equal exactly 10
+5. Successfully complete a box to score 1 point
+6. First player to reach 10 points wins!
 
 ### Features
 

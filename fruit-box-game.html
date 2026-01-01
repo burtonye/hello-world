@@ -90,8 +90,8 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(8, 70px);
-            gap: 5px;
+            grid-template-columns: repeat(17, 50px);
+            gap: 3px;
             background: #f0f0f0;
             padding: 10px;
             border-radius: 10px;
@@ -100,8 +100,8 @@
         }
 
         .cell {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             background: white;
             border: 2px solid #ddd;
             border-radius: 10px;
@@ -264,6 +264,7 @@
         <div class="instructions">
             <h3>How to Play:</h3>
             <ul>
+                <li>17x10 grid filled with apples numbered 1-9</li>
                 <li>Players take turns drawing boxes around apples</li>
                 <li>Click and drag to select apples in a rectangular area</li>
                 <li>The sum of selected apples must equal exactly 10</li>
@@ -301,7 +302,8 @@
     </div>
 
     <script>
-        const GRID_SIZE = 8;
+        const GRID_COLS = 17;
+        const GRID_ROWS = 10;
         const TARGET_SUM = 10;
         const WINNING_SCORE = 10;
 
@@ -326,13 +328,13 @@
         }
 
         function generateGrid() {
-            for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+            for (let i = 0; i < GRID_COLS * GRID_ROWS; i++) {
                 grid.push({
                     id: i,
                     value: Math.floor(Math.random() * 9) + 1,
                     owner: null,
-                    row: Math.floor(i / GRID_SIZE),
-                    col: i % GRID_SIZE
+                    row: Math.floor(i / GRID_COLS),
+                    col: i % GRID_COLS
                 });
             }
         }
@@ -400,7 +402,7 @@
             selectedCells = [];
             for (let row = minRow; row <= maxRow; row++) {
                 for (let col = minCol; col <= maxCol; col++) {
-                    const cellIndex = row * GRID_SIZE + col;
+                    const cellIndex = row * GRID_COLS + col;
                     if (grid[cellIndex].owner === null) {
                         selectedCells.push(cellIndex);
                     }
